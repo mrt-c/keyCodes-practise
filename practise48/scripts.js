@@ -59,15 +59,16 @@ document.addEventListener("keyup", function (event) {
 });
 
 //7
-let divFont = +getComputedStyle(document.querySelector("#div")).fontSize
+let myDiv = document.querySelector("#div")
+
 
 document.querySelector("#button1").addEventListener("click", function (event) {
-  console.log(divFont.fontSize.slice(0,-2) + 30 + "px");
   if (event.shiftKey == true) {
-    document.querySelector("#div").style.fontSize = fontsize.slice(0,-2); + 30 + "px"
+    myDiv.style.fontSize = getComputedStyle(myDiv).fontSize.slice(0,-2)*1 + 2 + "px"
   }
 });
 document.querySelector("#button2").addEventListener("click", function (event) {
   if (event.shiftKey == true) {
+    myDiv.style.fontSize = getComputedStyle(myDiv).fontSize.slice(0,-2)*1 - 2 + "px"
   }
 });
